@@ -26,7 +26,6 @@
 		3F77F31F28842B5200F29375 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F77F31E28842B5200F29375 /* NetworkRequest.swift */; };
 		3F77F32128842BAB00F29375 /* NetworkDataFetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F77F32028842BAB00F29375 /* NetworkDataFetch.swift */; };
 		3F77F32328842BED00F29375 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F77F32228842BED00F29375 /* UserData.swift */; };
-		3F77F325288467D700F29375 /* UpdateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F77F324288467D700F29375 /* UpdateModel.swift */; };
 		3F9BC10D288AD1D100468EFA /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 3F9BC10C288AD1D100468EFA /* SDWebImage */; };
 		3F9BC10F288AD1D100468EFA /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3F9BC10E288AD1D100468EFA /* SDWebImageMapKit */; };
 /* End PBXBuildFile section */
@@ -51,7 +50,6 @@
 		3F77F31E28842B5200F29375 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 		3F77F32028842BAB00F29375 /* NetworkDataFetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetch.swift; sourceTree = "<group>"; };
 		3F77F32228842BED00F29375 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
-		3F77F324288467D700F29375 /* UpdateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,7 +104,6 @@
 			children = (
 				3F77F3162884164B00F29375 /* UserRealmModel.swift */,
 				3F77F32228842BED00F29375 /* UserData.swift */,
-				3F77F324288467D700F29375 /* UpdateModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -288,7 +285,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F77F325288467D700F29375 /* UpdateModel.swift in Sources */,
 				3F77F31F28842B5200F29375 /* NetworkRequest.swift in Sources */,
 				3F77F30E288414A300F29375 /* UIView+Extensions.swift in Sources */,
 				3F77F2E62883FC2800F29375 /* AppDelegate.swift in Sources */,

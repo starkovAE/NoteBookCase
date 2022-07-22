@@ -10,7 +10,7 @@ import RealmSwift
 import SDWebImage
 
 class UserInfoViewController: UIViewController {
-    var imagePhotoCache = NSCache<NSString, UIImage>()
+
     var userDataRealm: UserRealmModel?
     
     //MARK: - UIElements

@@ -14,7 +14,6 @@ struct NetwrokDataFetch {
     func fetchUsers(urlString: String, completion: @escaping (UserData?) -> Void) {
         networkRequest.request(urlString: urlString) { result in
             switch result {
-                
             case .success(let data):
                 do {
                     let users = try JSONDecoder().decode(UserData.self, from: data)
@@ -25,7 +24,7 @@ struct NetwrokDataFetch {
                     print("Failed to decode JSON", jsonError.localizedDescription)
                     completion(nil)
                 }
-            case .failure(let error): //если получили ошибку вообще. не получилось получить данные (сюда затолкать локалку)
+            case .failure(let error):
                 print("Error received requesting data", error.localizedDescription)
                 completion(nil)
             }

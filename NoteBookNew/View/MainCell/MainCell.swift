@@ -9,9 +9,7 @@ import UIKit
 import SDWebImage
 
 class MainTableCell: UITableViewCell {
-    
-    var imageCache = NSCache<NSString, UIImage>()
-    
+    //MARK: UI
     private let backgroundCell: UIView = {
         let view = UIView()
         view.layer.cornerRadius = 10
@@ -20,7 +18,6 @@ class MainTableCell: UITableViewCell {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
-    //MARK: - productNameLabel
     private let nameLabel: UILabel = {
         let label = UILabel()
         label.text = ""
@@ -29,7 +26,6 @@ class MainTableCell: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-    //MARK: - productImageView
     private let userImageView: UIImageView = {
         let imageView = UIImageView()
         //        imageView.image = UIImage(named: "rita")
@@ -40,13 +36,13 @@ class MainTableCell: UITableViewCell {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
-    //MARK: activityIndicator
     private let activityIndicator: UIActivityIndicatorView = {
         let indicator = UIActivityIndicatorView()
         indicator.isHidden = true
         indicator.translatesAutoresizingMaskIntoConstraints = false
         return indicator
     } ()
+    //MARK: - image
     private var image: UIImage? {
         get {
             
@@ -70,32 +66,22 @@ class MainTableCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+    //MARK: - settingCastomView()
     func settingCastomView(users: UserRealmModel) {
         fetchImage(users: users)
         nameLabel.text = users.userFirstName
     }
+    //MARK: - fetchImage()
     func fetchImage(users: UserRealmModel) {
         activityIndicator.startAnimating()
         activityIndicator.isHidden = false
         DispatchQueue.main.async {
             self.userImageView.sd_setImage(with: URL(string: users.iconUser)) { image, _, _, _ in
                 self.image = image
-               }
+            }
         }
-//        if let cachedImage = imageCache.object(forKey: users.iconUser as NSString) {
-//            self.image = cachedImage
-//            print("КЭЭЭШ")
-//        } else {
-//            DispatchQueue.main.async {
-//                guard let url = URL(string: users.iconUser) else { return }
-//                guard let data = try? Data(contentsOf: url) else { return }
-//                self.image = UIImage(data: data)
-//                self.imageCache.setObject(self.image! , forKey: users.iconUser as NSString)
-//            }
-//        }
     }
-    
+    //MARK: - setupViews()
     private func setupViews() {
         backgroundColor = .clear
         selectionStyle = .none
@@ -104,13 +90,12 @@ class MainTableCell: UITableViewCell {
         addSubview(userImageView)
         addSubview(activityIndicator)
     }
-
+    
 }//закрывает класс
 
+//MARK: - extension
 extension MainTableCell {
-    private func setConstrains() { //метод для констреинтов
-        
-        
+    private func setConstrains() {
         NSLayoutConstraint.activate([
             backgroundCell.topAnchor.constraint(equalTo: topAnchor, constant: 0),
             backgroundCell.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0),
